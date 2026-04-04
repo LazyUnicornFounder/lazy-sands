@@ -28,13 +28,15 @@ const ShowcaseTicker = () => {
               href={site.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 w-72 md:w-80 rounded-lg overflow-hidden border border-border/40 relative group block transition-all duration-500 hover:border-foreground/50 hover:border-2"
+              className="shrink-0 w-72 md:w-80 aspect-[1920/1057] rounded-lg overflow-hidden border border-border/40 ring-0 ring-transparent ring-inset relative group block transition-all duration-500 hover:border-foreground/50 hover:ring-1 hover:ring-foreground/50"
             >
               <img
                 src={site.src}
                 alt={site.name}
-                className="w-full h-auto block"
-                loading="lazy"
+                width={1920}
+                height={1057}
+                className="w-full h-full object-cover block"
+                loading={i < sites.length ? "eager" : "lazy"}
               />
               <div className="absolute inset-0 bg-black backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-400 flex flex-col items-center justify-center text-center p-4">
                 <p className="font-heading text-foreground text-lg mb-1">{site.name}</p>
