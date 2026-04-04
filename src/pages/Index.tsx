@@ -29,7 +29,7 @@ const plans = [
     price: "$350",
     originalPrice: "$700",
     productId: "5cb2606d-ad4f-4f79-aac4-58ee56d01d2a",
-    description: "Landing page, auth, 1 core feature, database",
+    description: "Landing page, auth, 1 core feature, database — 2–3 days delivery",
     features: [
       "1 custom landing page",
       "User authentication",
@@ -44,7 +44,7 @@ const plans = [
     price: "$900",
     originalPrice: "$1,800",
     productId: "ed7cc3e3-aec0-428b-8b81-f5c645ba2c65",
-    description: "Full web app, dashboard, payments, 3–5 features",
+    description: "Full web app, dashboard, payments, 3–5 features — 5–7 days delivery",
     features: [
       "Full multi-page web app",
       "Dashboard included",
@@ -59,7 +59,7 @@ const plans = [
     price: "$1,900",
     originalPrice: "$3,800",
     productId: "c97eb6bd-5975-4796-8576-9cc34a68fe6d",
-    description: "Multi-user, admin panel, integrations, analytics",
+    description: "Multi-user, admin panel, integrations, analytics — 10–15 days delivery",
     features: [
       "Multi-user support",
       "Admin panel",
