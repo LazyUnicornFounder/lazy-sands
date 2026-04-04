@@ -86,6 +86,18 @@ const Index = () => {
   const [loading, setLoading] = useState<string | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<typeof plans[0] | null>(null);
 
+  const jumpToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  const jumpToSection = (sectionId: string, offset = 80) => {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const targetTop = Math.max(section.offsetTop - offset, 0);
+    window.scrollTo(0, targetTop);
+  };
+
   const handleCheckout = async (productId: string) => {
     setLoading(productId);
     try {
@@ -119,21 +131,17 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
         <div className="container flex items-center justify-between h-20">
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="font-heading text-2xl tracking-wide text-foreground/90 cursor-pointer leading-[1.1]">
+          <button type="button" onClick={jumpToTop} className="font-heading text-2xl tracking-wide text-foreground/90 cursor-pointer leading-[1.1] text-left">
             <span className="block">Lazy</span>
             <span className="block">Sands</span>
-          </a>
+          </button>
           <div className="flex items-center gap-1">
-            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ block: 'start' }); }}>
-              <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
-                Pricing
-              </Button>
-            </a>
-            <a href="#about" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView(); }}>
-              <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
-                About
-              </Button>
-            </a>
+            <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("pricing")}>
+              Pricing
+            </Button>
+            <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("about")}>
+              About
+            </Button>
             <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground w-9 h-9">
                 <XIcon className="w-4 h-4" />
@@ -179,12 +187,10 @@ const Index = () => {
             className="mb-6"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
           >
-            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ block: 'start', behavior: 'instant' }); }}>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-light tracking-wide">
-                Get Started
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-light tracking-wide" onClick={() => jumpToSection("pricing")}>
+              Get Started
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
           </motion.div>
 
           <motion.div
