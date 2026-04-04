@@ -306,7 +306,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/30 pt-10 pb-6 relative z-10">
+      <footer className="border-t border-border/30 pt-8 pb-4 relative z-10">
         <div className="container flex flex-col items-center gap-4 text-xs text-muted-foreground tracking-wide">
           <span className="font-heading text-lg tracking-wide text-foreground/60 leading-[1.1] text-center">
             <span className="block">Lazy</span>
