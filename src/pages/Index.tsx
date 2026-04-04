@@ -211,7 +211,7 @@ const Index = () => {
         <div className="container">
           <motion.div
             className="text-center mb-20"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
           >
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Pricing</p>
             <h2 className="text-4xl md:text-5xl font-heading mb-5">Choose your package</h2>
