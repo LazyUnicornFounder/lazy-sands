@@ -176,8 +176,20 @@ const Index = () => {
           </motion.p>
 
           <motion.div
-            className="flex items-center gap-3 mb-16"
+            className="mb-6"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
+          >
+            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView(); }}>
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-light tracking-wide">
+                Get Started
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center gap-3 mb-16"
+            initial="hidden" animate="visible" variants={fadeUp} custom={2.5}
           >
             <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2 font-light">
