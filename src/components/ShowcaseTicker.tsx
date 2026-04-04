@@ -28,7 +28,7 @@ const ShowcaseTicker = () => {
               href={site.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 w-72 md:w-80 rounded-lg overflow-hidden border border-border/40 relative group block transition-all duration-500 hover:border-primary/20"
+              className="shrink-0 w-72 md:w-80 rounded-lg overflow-hidden border border-border/40 relative group block transition-all duration-500 hover:border-foreground/30"
             >
               <img
                 src={site.src}
