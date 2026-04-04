@@ -283,9 +283,7 @@ const Index = () => {
 
       <section id="about" className="py-24 md:py-32 relative z-10">
         <div className="container max-w-3xl mx-auto text-center">
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          >
+          <div>
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">About</p>
             <h2 className="text-4xl md:text-5xl font-heading mb-8">Our Mission</h2>
             <p className="text-2xl md:text-3xl font-heading italic text-gradient mb-8">
