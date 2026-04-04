@@ -123,12 +123,12 @@ const Index = () => {
             Lazy Sands
           </a>
           <div className="flex items-center gap-1">
-            <a href="#pricing">
+            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView(); }}>
               <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
                 Pricing
               </Button>
             </a>
-            <a href="#about">
+            <a href="#about" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView(); }}>
               <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
                 About
               </Button>
