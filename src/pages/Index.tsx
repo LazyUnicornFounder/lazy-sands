@@ -166,7 +166,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Choose your package</h2>
             <p className="text-muted-foreground">One-time payment. No subscriptions. You own everything.</p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {plans.map((plan, i) => (
               <motion.div
                 key={plan.name}
@@ -195,16 +195,28 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  size="lg"
-                  className={`w-full ${plan.popular ? "glow-primary" : ""}`}
-                  variant={plan.popular ? "default" : "outline"}
-                  onClick={() => handleCheckout(plan.productId)}
-                  disabled={loading === plan.productId}
-                >
-                  {loading === plan.productId ? "Loading..." : "Buy Now"}
-                  {loading !== plan.productId && <ArrowRight className="ml-2 w-4 h-4" />}
-                </Button>
+                {plan.productId ? (
+                  <Button
+                    size="lg"
+                    className={`w-full ${plan.popular ? "glow-primary" : ""}`}
+                    variant={plan.popular ? "default" : "outline"}
+                    onClick={() => handleCheckout(plan.productId)}
+                    disabled={loading === plan.productId}
+                  >
+                    {loading === plan.productId ? "Loading..." : "Buy Now"}
+                    {loading !== plan.productId && <ArrowRight className="ml-2 w-4 h-4" />}
+                  </Button>
+                ) : (
+                  <Button
+                    size="lg"
+                    className="w-full"
+                    variant="outline"
+                    onClick={() => window.location.href = "mailto:hello@lovablebuilder.com"}
+                  >
+                    Contact Us
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                )}
               </motion.div>
             ))}
           </div>
