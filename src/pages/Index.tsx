@@ -149,6 +149,24 @@ const Index = () => {
           </motion.p>
 
           <motion.div
+            className="flex items-center gap-3 mb-16"
+            initial="hidden" animate="visible" variants={fadeUp} custom={2}
+          >
+            <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2 font-light">
+                <Twitter className="w-4 h-4" />
+                Follow me on X
+              </Button>
+            </a>
+            <a href="https://www.linkedin.com/in/saadsahawneh/" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2 font-light">
+                <Linkedin className="w-4 h-4" />
+                Follow me on LinkedIn
+              </Button>
+            </a>
+          </motion.div>
+
+          <motion.div
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
           >
             <ShowcaseTicker />
