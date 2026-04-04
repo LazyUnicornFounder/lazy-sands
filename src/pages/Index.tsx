@@ -245,6 +245,37 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About */}
+      <div className="container max-w-5xl mx-auto">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
+
+      <section id="about" className="py-24 md:py-32 relative z-10">
+        <div className="container max-w-3xl mx-auto text-center">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          >
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">About</p>
+            <h2 className="text-4xl md:text-5xl font-heading mb-8">Our Mission</h2>
+            <p className="text-2xl md:text-3xl font-heading italic text-gradient mb-8">
+              Accelerate autonomous capitalism.
+            </p>
+            <p className="text-muted-foreground font-light leading-relaxed text-lg">
+              Lazy Sands is a venture of{" "}
+              <a
+                href="https://lazyfactoryventures.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary/80 hover:text-primary underline underline-offset-4 transition-colors"
+              >
+                Lazy Factory Ventures
+              </a>
+              , building and launching businesses and apps at speed using the latest AI-powered tools.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-border/30 py-12 relative z-10">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground tracking-wide">
