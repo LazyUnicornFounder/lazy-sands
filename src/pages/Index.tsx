@@ -221,9 +221,8 @@ const Index = () => {
       {/* Pricing */}
       <section id="pricing" className="py-24 md:py-32 relative z-10">
         <div className="container">
-          <motion.div
+          <div
             className="text-center mb-20"
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
           >
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Pricing</p>
             <h2 className="text-4xl md:text-5xl font-heading mb-5">Choose your package</h2>
