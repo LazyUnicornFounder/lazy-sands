@@ -112,7 +112,9 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
         <div className="container flex items-center justify-between h-20">
-          <img src="/logo.png" alt="Lazy Sands" className="h-10" />
+          <span className="font-heading text-2xl tracking-wide text-foreground/90">
+            Lazy Sands
+          </span>
           <a href="#pricing">
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
               Pricing
