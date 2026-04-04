@@ -184,6 +184,7 @@ const Index = () => {
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Pricing</p>
             <h2 className="text-4xl md:text-5xl font-heading mb-5">Choose your package</h2>
             <p className="text-muted-foreground font-light">One-time payment. No subscriptions. You own everything.</p>
+            <p className="text-xs text-muted-foreground/50 mt-3 font-light">Powered by Polar payments</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
