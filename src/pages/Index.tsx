@@ -112,7 +112,9 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
         <div className="container flex items-center justify-between h-20">
-          <img src="/logo.png" alt="Lazy Sands" className="h-10" />
+          <span className="font-heading text-2xl tracking-wide text-foreground/90">
+            Lazy Sands
+          </span>
           <a href="#pricing">
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
               Pricing
@@ -246,7 +248,9 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border/30 py-12 relative z-10">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground tracking-wide">
-          <img src="/logo.png" alt="Lazy Sands" className="h-8 opacity-60" />
+          <span className="font-heading text-lg tracking-wide text-foreground/60">
+            Lazy Sands
+          </span>
           <p className="font-light">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </footer>
