@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { Globe, ArrowLeftRight } from "lucide-react";
-import { Sparkles, Layout, Rocket, MessageSquare, ArrowRight, CheckCircle2, Zap, Users, Code2 } from "lucide-react";
+import { Sparkles, ArrowRight, CheckCircle2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -12,64 +14,73 @@ const fadeUp = {
   }),
 };
 
-const services = [
+const plans = [
   {
-    icon: Layout,
-    title: "Custom Web Apps",
-    description: "From idea to production-ready app — built fast with Lovable's AI-powered platform.",
+    name: "Starter Build",
+    price: "$499",
+    productId: "5cb2606d-ad4f-4f79-aac4-58ee56d01d2a",
+    description: "Perfect for a landing page or simple site",
+    features: [
+      "1 custom page built on Lovable",
+      "Domain purchased & configured",
+      "SSL + DNS fully set up",
+      "Project transferred to you",
+      "1 round of revisions",
+    ],
   },
   {
-    icon: Rocket,
-    title: "MVP Launch",
-    description: "Get your minimum viable product live in days, not months. Perfect for startups and founders.",
+    name: "Pro Build",
+    price: "$1,499",
+    productId: "ed7cc3e3-aec0-428b-8b81-f5c645ba2c65",
+    popular: true,
+    description: "For founders ready to launch a real product",
+    features: [
+      "Full multi-page web app",
+      "Backend integration included",
+      "Domain setup & transfer",
+      "Auth, database, and API setup",
+      "3 rounds of revisions",
+      "1 week of post-launch support",
+    ],
   },
   {
-    icon: Globe,
-    title: "Domain Setup",
-    description: "Buy or connect your custom domain, configure DNS, set up SSL — all handled for you seamlessly.",
-  },
-  {
-    icon: ArrowLeftRight,
-    title: "Project Transfer",
-    description: "Moving between workspaces or accounts? I'll handle the full transfer with zero downtime.",
-  },
-  {
-    icon: Code2,
-    title: "App Optimization",
-    description: "Already on Lovable? I'll refine your design, fix bugs, and add features that delight users.",
-  },
-  {
-    icon: MessageSquare,
-    title: "1-on-1 Coaching",
-    description: "Learn to build confidently on Lovable with personalized sessions tailored to your goals.",
-  },
-];
-
-const steps = [
-  { number: "01", title: "Discovery Call", description: "We discuss your vision, goals, and timeline." },
-  { number: "02", title: "Design & Build", description: "I craft your app on Lovable with rapid iterations." },
-  { number: "03", title: "Review & Launch", description: "You review, we refine, and go live together." },
-];
-
-const testimonials = [
-  {
-    quote: "Went from a napkin sketch to a live product in under a week. Absolutely incredible.",
-    name: "Sarah K.",
-    role: "Startup Founder",
-  },
-  {
-    quote: "The coaching sessions unlocked Lovable for me. Now I build my own features confidently.",
-    name: "Marcus T.",
-    role: "Solo Entrepreneur",
-  },
-  {
-    quote: "Professional, fast, and truly understands what makes a great web app. Highly recommend.",
-    name: "Elena R.",
-    role: "Agency Owner",
+    name: "Unicorn Launch",
+    price: "$3,499",
+    productId: "c97eb6bd-5975-4796-8576-9cc34a68fe6d",
+    description: "Your complete autonomous business, ready to run",
+    features: [
+      "Full-stack app with payments",
+      "Auth, database, storage, APIs",
+      "Stripe or Polar integration",
+      "Domain, branding, everything",
+      "Complete project transfer",
+      "2 weeks of post-launch support",
+      "Priority communication",
+    ],
   },
 ];
 
 const Index = () => {
+  const [loading, setLoading] = useState<string | null>(null);
+
+  const handleCheckout = async (productId: string) => {
+    setLoading(productId);
+    try {
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        body: { productId },
+      });
+      if (error) throw error;
+      if (data?.url) {
+        window.location.href = data.url;
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(null);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
@@ -79,15 +90,11 @@ const Index = () => {
             <Sparkles className="inline-block w-5 h-5 text-primary mr-2" />
             LovableBuilder
           </span>
-          <Button size="sm">
-            Book a Call
-            <ArrowRight className="ml-1 w-4 h-4" />
-          </Button>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+      <section className="relative pt-32 pb-10 md:pt-44 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(217_91%_60%/0.08)_0%,transparent_70%)]" />
         <div className="container relative text-left max-w-4xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
@@ -108,7 +115,7 @@ const Index = () => {
             Solo founder? I'll build your app, buy and set up your custom domain, and transfer the entire project to you — ready to run. Everything you need to launch your solo unicorn, handled end to end.
           </motion.p>
           <motion.div
-            className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10"
+            className="grid md:grid-cols-2 gap-6 max-w-3xl mb-10"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
           >
             <div className="text-left">
@@ -126,160 +133,61 @@ const Index = () => {
               />
             </div>
           </motion.div>
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-start"
-            initial="hidden" animate="visible" variants={fadeUp} custom={3}
-          >
-            <Button size="lg" className="glow-primary text-base px-8">
-              Get Started <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-base px-8">
-              See My Work
-            </Button>
-          </motion.div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-20 md:py-28">
+      {/* Pricing */}
+      <section className="py-16 md:py-24">
         <div className="container">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-14"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">What I can build for you</h2>
-            <p className="text-muted-foreground max-w-md mx-auto">
-              Whether you need a full product or a helping hand, I've got you covered.
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {services.map((s, i) => (
-              <motion.div
-                key={s.title}
-                className="group p-6 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-              >
-                <s.icon className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-xl font-heading font-semibold mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Domain & Transfer */}
-      <section className="py-20 md:py-28 border-t border-border/50">
-        <div className="container max-w-5xl">
-          <motion.div
-            className="text-center mb-16"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Domain & Transfer Services</h2>
-            <p className="text-muted-foreground max-w-lg mx-auto">
-              Go live with your own domain or move projects between accounts — stress-free.
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              className="p-8 rounded-xl border border-border bg-card"
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-            >
-              <Globe className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-xl font-heading font-semibold mb-3">Custom Domain Setup</h3>
-              <ul className="space-y-2.5 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Buy a new domain or connect one you already own</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> DNS configuration — A records, TXT verification, SSL</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Cloudflare proxy & advanced setup support</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Root domain + www subdomain properly configured</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Email DNS records (MX, SPF, DKIM, DMARC)</li>
-              </ul>
-            </motion.div>
-            <motion.div
-              className="p-8 rounded-xl border border-border bg-card"
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
-            >
-              <ArrowLeftRight className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-xl font-heading font-semibold mb-3">Project Transfer</h3>
-              <ul className="space-y-2.5 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Transfer projects between workspaces seamlessly</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Move to a new account with zero data loss</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Backend disconnect & reconnect handled for you</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Billing & workspace admin setup guidance</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Domain migration between projects supported</li>
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28 border-t border-border/50">
-        <div className="container max-w-3xl">
-          <motion.div
-            className="text-center mb-16"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">How it works</h2>
-            <p className="text-muted-foreground">Three simple steps to your dream product.</p>
-          </motion.div>
-          <div className="space-y-8">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step.number}
-                className="flex gap-6 items-start"
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-              >
-                <span className="text-4xl font-heading font-bold text-primary/20">{step.number}</span>
-                <div>
-                  <h3 className="text-lg font-heading font-semibold mb-1">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm">{step.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 md:py-28 border-t border-border/50">
-        <div className="container">
-          <motion.div
-            className="text-center mb-16"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">What clients say</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Choose your package</h2>
+            <p className="text-muted-foreground">One-time payment. No subscriptions. You own everything.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {testimonials.map((t, i) => (
+            {plans.map((plan, i) => (
               <motion.div
-                key={t.name}
-                className="p-6 rounded-xl border border-border bg-card"
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
+                key={plan.name}
+                className={`relative p-8 rounded-2xl border bg-card flex flex-col ${
+                  plan.popular ? "border-primary ring-2 ring-primary/20" : "border-border"
+                }`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i}
               >
-                <p className="text-foreground text-sm leading-relaxed mb-4">"{t.quote}"</p>
-                <div>
-                  <p className="font-heading font-semibold text-sm">{t.name}</p>
-                  <p className="text-muted-foreground text-xs">{t.role}</p>
-                </div>
+                {plan.popular && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="text-xl font-heading font-bold mb-1">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
+                <p className="text-4xl font-heading font-bold mb-6">{plan.price}</p>
+                <ul className="space-y-3 mb-8 flex-1">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  size="lg"
+                  className={`w-full ${plan.popular ? "glow-primary" : ""}`}
+                  variant={plan.popular ? "default" : "outline"}
+                  onClick={() => handleCheckout(plan.productId)}
+                  disabled={loading === plan.productId}
+                >
+                  {loading === plan.productId ? "Loading..." : "Buy Now"}
+                  {loading !== plan.productId && <ArrowRight className="ml-2 w-4 h-4" />}
+                </Button>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 md:py-28 border-t border-border/50">
-        <div className="container text-center max-w-2xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            <Users className="w-10 h-10 text-primary mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Ready to build something amazing?</h2>
-            <p className="text-muted-foreground mb-8">
-              Let's chat about your project and see how fast we can bring it to life.
-            </p>
-            <Button size="lg" className="glow-primary text-base px-10">
-              Book Your Free Call <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </motion.div>
         </div>
       </section>
 
