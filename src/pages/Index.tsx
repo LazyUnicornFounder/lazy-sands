@@ -124,7 +124,7 @@ const Index = () => {
             <span className="block">Sands</span>
           </a>
           <div className="flex items-center gap-1">
-            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView(); }}>
+            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ block: 'start' }); }}>
               <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
                 Pricing
               </Button>
@@ -179,7 +179,7 @@ const Index = () => {
             className="mb-6"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
           >
-            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView(); }}>
+            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ block: 'start', behavior: 'instant' }); }}>
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-light tracking-wide">
                 Get Started
                 <ArrowRight className="ml-2 w-4 h-4" />
