@@ -124,7 +124,7 @@ const Index = () => {
             <span className="block">Sands</span>
           </a>
           <div className="flex items-center gap-1">
-            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView(); }}>
+            <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ block: 'start' }); }}>
               <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
                 Pricing
               </Button>
