@@ -86,3 +86,21 @@
 .animate-ticker:hover {
   animation-play-state: paused;
 }
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-badge {
+  background-image: linear-gradient(
+    110deg,
+    hsl(var(--primary) / 0.05) 0%,
+    hsl(var(--primary) / 0.05) 40%,
+    hsl(var(--primary) / 0.25) 50%,
+    hsl(var(--primary) / 0.05) 60%,
+    hsl(var(--primary) / 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}

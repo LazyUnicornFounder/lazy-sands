@@ -99,8 +99,8 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(217_91%_60%/0.08)_0%,transparent_70%)]" />
         <div className="container relative text-left max-w-4xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6">
-              <Zap className="w-3.5 h-3.5" /> Lovable Expert
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6 shimmer-badge">
+              <Zap className="w-3.5 h-3.5" /> Lovable certified Platinum builder
             </span>
           </motion.div>
           <motion.h1
