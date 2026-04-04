@@ -232,13 +232,9 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {plans.map((plan, i) => (
-              <motion.div
+              <div
                 key={plan.name}
                 className="group relative p-7 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm flex flex-col hover:border-primary/20 hover:bg-card/70 transition-all duration-500"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.4 }}
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{plan.name}</p>
                 <p className="text-3xl font-heading mb-2">{plan.price}</p>
