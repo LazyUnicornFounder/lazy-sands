@@ -211,7 +211,7 @@ const Index = () => {
         <div className="container">
           <motion.div
             className="text-center mb-20"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
           >
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Pricing</p>
             <h2 className="text-4xl md:text-5xl font-heading mb-5">Choose your package</h2>
@@ -224,11 +224,10 @@ const Index = () => {
               <motion.div
                 key={plan.name}
                 className="group relative p-7 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm flex flex-col hover:border-primary/20 hover:bg-card/70 transition-all duration-500"
-                initial="hidden"
-                whileInView="visible"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                variants={fadeUp}
-                custom={i}
+                transition={{ delay: i * 0.05, duration: 0.4 }}
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{plan.name}</p>
                 <p className="text-3xl font-heading mb-2">{plan.price}</p>
