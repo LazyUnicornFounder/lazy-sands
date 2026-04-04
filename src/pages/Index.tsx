@@ -119,9 +119,9 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
         <div className="container flex items-center justify-between h-20">
-          <span className="font-heading text-2xl tracking-wide text-foreground/90">
+          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="font-heading text-2xl tracking-wide text-foreground/90 cursor-pointer">
             Lazy Sands
-          </span>
+          </a>
           <div className="flex items-center gap-1">
             <a href="#pricing">
               <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
