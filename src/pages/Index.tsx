@@ -301,7 +301,7 @@ const Index = () => {
               </a>
               , building and launching businesses and apps at speed using the latest AI-powered tools.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
