@@ -126,7 +126,7 @@ const Index = () => {
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10"
             initial="hidden" animate="visible" variants={fadeUp} custom={1.5}
           >
-            Solo founder? I'll build your app, buy and set up your custom domain, and transfer the entire project to you — ready to run. Everything you need to launch your solo unicorn, handled end to end.
+            Whether you're a solo founder needing a landing page, a small business launching a full web app with payments, or a growing company that needs multi-user dashboards and integrations — I'll build it, deploy it, and hand it over ready to run.
           </motion.p>
           <motion.div
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
