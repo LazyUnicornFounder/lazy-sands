@@ -34,7 +34,6 @@ const plans = [
     name: "Small Business",
     price: "$3,500",
     productId: "ed7cc3e3-aec0-428b-8b81-f5c645ba2c65",
-    popular: true,
     description: "Full web app, dashboard, payments, 3-5 features",
     features: [
       "Full multi-page web app",
@@ -170,20 +169,13 @@ const Index = () => {
             {plans.map((plan, i) => (
               <motion.div
                 key={plan.name}
-                className={`relative p-8 rounded-2xl border bg-card flex flex-col ${
-                  plan.popular ? "border-primary ring-2 ring-primary/20" : "border-border"
-                }`}
+                className="relative p-8 rounded-2xl border border-border bg-card flex flex-col"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
               >
-                {plan.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">
-                    Most Popular
-                  </span>
-                )}
                 <h3 className="text-xl font-heading font-bold mb-1">{plan.name}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
                 <p className="text-4xl font-heading font-bold mb-6">{plan.price}</p>
@@ -198,8 +190,8 @@ const Index = () => {
                 {plan.productId ? (
                   <Button
                     size="lg"
-                    className={`w-full ${plan.popular ? "glow-primary" : ""}`}
-                    variant={plan.popular ? "default" : "outline"}
+                    className="w-full"
+                    variant="outline"
                     onClick={() => handleCheckout(plan.productId)}
                     disabled={loading === plan.productId}
                   >
