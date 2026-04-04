@@ -132,8 +132,15 @@ const Index = () => {
       {/* Ambient glow */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_center,hsl(38_80%_62%/0.06)_0%,transparent_70%)] pointer-events-none z-0" />
 
+      {/* Discount Banner */}
+      {new Date() < new Date("2026-05-01") && (
+        <div className="fixed top-0 w-full z-[60] bg-primary text-primary-foreground text-center py-2 text-sm font-light tracking-wide">
+          🚀 Launch sale — <span className="font-medium">50% off all packages</span> with code <span className="font-mono font-medium">LAUNCH50</span> · Ends April 30
+        </div>
+      )}
+
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
+      <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30" style={{ top: new Date() < new Date("2026-05-01") ? "36px" : "0px" }}>
         <div className="container flex items-center justify-between h-20">
           <button type="button" onClick={jumpToTop} className="font-heading text-2xl tracking-wide text-foreground/90 cursor-pointer leading-[1.1] text-left">
             <span className="block">Lazy</span>
