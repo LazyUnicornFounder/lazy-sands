@@ -17,50 +17,63 @@ const fadeUp = {
 
 const plans = [
   {
-    name: "Starter Build",
-    price: "$499",
+    name: "Solo Founder",
+    price: "$1,500",
     productId: "5cb2606d-ad4f-4f79-aac4-58ee56d01d2a",
-    description: "Perfect for a landing page or simple site",
+    description: "Landing page, auth, 1 core feature, database",
     features: [
-      "1 custom page built on Lovable",
-      "Domain purchased & configured",
-      "SSL + DNS fully set up",
-      "Project transferred to you",
+      "1 custom landing page",
+      "User authentication",
+      "1 core feature built out",
+      "Database setup",
+      "Domain & deployment",
       "1 round of revisions",
     ],
   },
   {
-    name: "Pro Build",
-    price: "$1,499",
+    name: "Small Business",
+    price: "$3,500",
     productId: "ed7cc3e3-aec0-428b-8b81-f5c645ba2c65",
     popular: true,
-    description: "For founders ready to launch a real product",
+    description: "Full web app, dashboard, payments, 3-5 features",
     features: [
       "Full multi-page web app",
-      "Backend integration included",
-      "Domain setup & transfer",
-      "Auth, database, and API setup",
+      "Dashboard included",
+      "Payments integration",
+      "3–5 core features",
+      "Database & auth setup",
       "3 rounds of revisions",
-      "1 week of post-launch support",
     ],
   },
   {
-    name: "Unicorn Launch",
-    price: "$3,499",
+    name: "Medium Business",
+    price: "$7,500",
     productId: "c97eb6bd-5975-4796-8576-9cc34a68fe6d",
-    description: "Your complete autonomous business, ready to run",
+    description: "Multi-user, admin panel, integrations, analytics",
     features: [
-      "Full-stack app with payments",
-      "Auth, database, storage, APIs",
-      "Stripe or Polar integration",
-      "Domain, branding, everything",
-      "Complete project transfer",
-      "2 weeks of post-launch support",
+      "Multi-user support",
+      "Admin panel",
+      "Third-party integrations",
+      "Analytics dashboard",
+      "Full auth & database",
+      "2 weeks post-launch support",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    productId: "",
+    description: "Custom scope, SLA, dedicated support",
+    features: [
+      "Custom project scope",
+      "SLA agreement",
+      "Dedicated support",
       "Priority communication",
+      "Unlimited revisions",
+      "Ongoing maintenance",
     ],
   },
 ];
-
 const Index = () => {
   const [loading, setLoading] = useState<string | null>(null);
 
@@ -153,7 +166,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Choose your package</h2>
             <p className="text-muted-foreground">One-time payment. No subscriptions. You own everything.</p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {plans.map((plan, i) => (
               <motion.div
                 key={plan.name}
@@ -182,16 +195,28 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  size="lg"
-                  className={`w-full ${plan.popular ? "glow-primary" : ""}`}
-                  variant={plan.popular ? "default" : "outline"}
-                  onClick={() => handleCheckout(plan.productId)}
-                  disabled={loading === plan.productId}
-                >
-                  {loading === plan.productId ? "Loading..." : "Buy Now"}
-                  {loading !== plan.productId && <ArrowRight className="ml-2 w-4 h-4" />}
-                </Button>
+                {plan.productId ? (
+                  <Button
+                    size="lg"
+                    className={`w-full ${plan.popular ? "glow-primary" : ""}`}
+                    variant={plan.popular ? "default" : "outline"}
+                    onClick={() => handleCheckout(plan.productId)}
+                    disabled={loading === plan.productId}
+                  >
+                    {loading === plan.productId ? "Loading..." : "Buy Now"}
+                    {loading !== plan.productId && <ArrowRight className="ml-2 w-4 h-4" />}
+                  </Button>
+                ) : (
+                  <Button
+                    size="lg"
+                    className="w-full"
+                    variant="outline"
+                    onClick={() => window.location.href = "mailto:hello@lovablebuilder.com"}
+                  >
+                    Contact Us
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                )}
               </motion.div>
             ))}
           </div>
