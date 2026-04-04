@@ -134,6 +134,12 @@ const Index = () => {
               />
             </div>
           </motion.div>
+          <motion.div
+            initial="hidden" animate="visible" variants={fadeUp} custom={3}
+            className="mt-6"
+          >
+            <ShowcaseTicker />
+          </motion.div>
         </div>
       </section>
 
