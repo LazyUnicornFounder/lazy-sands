@@ -107,7 +107,7 @@ const Index = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight tracking-tight mb-6"
             initial="hidden" animate="visible" variants={fadeUp} custom={1}
           >
-            I'm a <span className="text-gradient">Platinum Level</span> builder on Lovable and I help you launch an autonomous business on Lovable.
+            I'm a <span className="text-gradient">Platinum Level</span> builder on Lovable and I help you launch a business on Lovable.
           </motion.h1>
           <motion.p
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10"
