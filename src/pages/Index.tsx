@@ -221,25 +221,20 @@ const Index = () => {
       {/* Pricing */}
       <section id="pricing" className="py-24 md:py-32 relative z-10">
         <div className="container">
-          <motion.div
+          <div
             className="text-center mb-20"
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
           >
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Pricing</p>
             <h2 className="text-4xl md:text-5xl font-heading mb-5">Choose your package</h2>
             <p className="text-muted-foreground font-light">One-time payment. No subscriptions. You own everything.</p>
             <p className="text-xs text-muted-foreground/50 mt-3 font-light">Powered by <a href="https://polar.sh" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground transition-colors">Polar</a> payments</p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {plans.map((plan, i) => (
-              <motion.div
+              <div
                 key={plan.name}
                 className="group relative p-7 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm flex flex-col hover:border-primary/20 hover:bg-card/70 transition-all duration-500"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.4 }}
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{plan.name}</p>
                 <p className="text-3xl font-heading mb-2">{plan.price}</p>
@@ -275,7 +270,7 @@ const Index = () => {
                     <ArrowRight className="ml-2 w-3.5 h-3.5" />
                   </Button>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
