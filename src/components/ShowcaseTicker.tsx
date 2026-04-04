@@ -7,7 +7,7 @@ import showcaseLazyCloud from "@/assets/showcase-lazy-cloud.png";
 const sites = [
   { src: showcaseLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://lazyunicorn.ai" },
   { src: showcaseBreakingMuse, name: "Breaking Muse", tagline: "Turn today's news into your next startup idea", url: "https://breakingmuse.ai" },
-  { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.ai" },
+  { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.com/" },
   { src: showcaseAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Follow the autonomous revolution in real time", url: "https://lazyfactoryventures.com" },
   { src: showcaseLazyCloud, name: "Lazy Cloud", tagline: "Bring your file server to life", url: "https://lazycloud.com" },
 ];
@@ -36,9 +36,9 @@ const ShowcaseTicker = () => {
                 className="w-full h-auto block"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-foreground/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
-                <p className="font-heading font-bold text-background text-lg mb-1">{site.name}</p>
-                <p className="text-background/70 text-xs leading-relaxed">{site.tagline}</p>
+              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                <p className="font-heading font-bold text-white text-lg mb-1">{site.name}</p>
+                <p className="text-white/70 text-xs leading-relaxed">{site.tagline}</p>
               </div>
             </a>
           ))}
