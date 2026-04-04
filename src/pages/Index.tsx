@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Globe, ArrowLeftRight } from "lucide-react";
 import { Sparkles, Layout, Rocket, MessageSquare, ArrowRight, CheckCircle2, Zap, Users, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -21,6 +22,16 @@ const services = [
     icon: Rocket,
     title: "MVP Launch",
     description: "Get your minimum viable product live in days, not months. Perfect for startups and founders.",
+  },
+  {
+    icon: Globe,
+    title: "Domain Setup",
+    description: "Buy or connect your custom domain, configure DNS, set up SSL — all handled for you seamlessly.",
+  },
+  {
+    icon: ArrowLeftRight,
+    title: "Project Transfer",
+    description: "Moving between workspaces or accounts? I'll handle the full transfer with zero downtime.",
   },
   {
     icon: Code2,
@@ -123,7 +134,7 @@ const Index = () => {
               Whether you need a full product or a helping hand, I've got you covered.
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {services.map((s, i) => (
               <motion.div
                 key={s.title}
@@ -139,7 +150,51 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Domain & Transfer */}
+      <section className="py-20 md:py-28 border-t border-border/50">
+        <div className="container max-w-5xl">
+          <motion.div
+            className="text-center mb-16"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          >
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Domain & Transfer Services</h2>
+            <p className="text-muted-foreground max-w-lg mx-auto">
+              Go live with your own domain or move projects between accounts — stress-free.
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              className="p-8 rounded-xl border border-border bg-card"
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+            >
+              <Globe className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-xl font-heading font-semibold mb-3">Custom Domain Setup</h3>
+              <ul className="space-y-2.5 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Buy a new domain or connect one you already own</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> DNS configuration — A records, TXT verification, SSL</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Cloudflare proxy & advanced setup support</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Root domain + www subdomain properly configured</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Email DNS records (MX, SPF, DKIM, DMARC)</li>
+              </ul>
+            </motion.div>
+            <motion.div
+              className="p-8 rounded-xl border border-border bg-card"
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+            >
+              <ArrowLeftRight className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-xl font-heading font-semibold mb-3">Project Transfer</h3>
+              <ul className="space-y-2.5 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Transfer projects between workspaces seamlessly</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Move to a new account with zero data loss</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Backend disconnect & reconnect handled for you</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Billing & workspace admin setup guidance</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> Domain migration between projects supported</li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 md:py-28 border-t border-border/50">
         <div className="container max-w-3xl">
           <motion.div
