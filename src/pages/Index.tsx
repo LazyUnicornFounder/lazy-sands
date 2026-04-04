@@ -29,7 +29,7 @@ const plans = [
     price: "$350",
     originalPrice: "$700",
     productId: "5cb2606d-ad4f-4f79-aac4-58ee56d01d2a",
-    description: "Landing page, auth, 1 core feature, database",
+    description: "Landing page, auth, 1 core feature, database — 2–3 days delivery",
     features: [
       "1 custom landing page",
       "User authentication",
