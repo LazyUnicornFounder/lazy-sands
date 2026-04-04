@@ -116,8 +116,14 @@ const Index = () => {
             Solo founder? I'll build your app, buy and set up your custom domain, and transfer the entire project to you — ready to run. Everything you need to launch your solo unicorn, handled end to end.
           </motion.p>
           <motion.div
-            className="grid md:grid-cols-2 gap-6 max-w-3xl mb-10"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
+            className="mb-10"
+          >
+            <ShowcaseTicker />
+          </motion.div>
+          <motion.div
+            className="grid md:grid-cols-2 gap-6 max-w-3xl mb-10"
+            initial="hidden" animate="visible" variants={fadeUp} custom={2.5}
           >
             <div className="text-left">
               <label className="block text-sm font-medium text-muted-foreground mb-2">What do you want to sell?</label>
@@ -133,12 +139,6 @@ const Index = () => {
                 placeholder="Describe your ideal customer..."
               />
             </div>
-          </motion.div>
-          <motion.div
-            initial="hidden" animate="visible" variants={fadeUp} custom={3}
-            className="mt-6"
-          >
-            <ShowcaseTicker />
           </motion.div>
         </div>
       </section>
