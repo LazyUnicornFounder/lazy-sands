@@ -270,7 +270,7 @@ const Index = () => {
                     <ArrowRight className="ml-2 w-3.5 h-3.5" />
                   </Button>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
