@@ -89,25 +89,39 @@ const Index = () => {
       {/* Hero */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(217_91%_60%/0.08)_0%,transparent_70%)]" />
-        <div className="container relative text-center max-w-3xl mx-auto">
+        <div className="container relative text-center max-w-4xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6">
               <Zap className="w-3.5 h-3.5" /> Lovable Expert
             </span>
           </motion.div>
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight tracking-tight mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight tracking-tight mb-10"
             initial="hidden" animate="visible" variants={fadeUp} custom={1}
           >
-            I turn your ideas into{" "}
-            <span className="text-gradient">stunning web apps</span>
+            Lovable{" "}
+            <span className="text-gradient">Platinum Level</span>{" "}
+            Builder
           </motion.h1>
-          <motion.p
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10"
+          <motion.div
+            className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
           >
-            Expert Lovable developer helping founders, creators, and businesses ship beautiful products — fast.
-          </motion.p>
+            <div className="text-left">
+              <label className="block text-sm font-medium text-muted-foreground mb-2">What do you want to sell?</label>
+              <textarea
+                className="w-full h-36 md:h-44 rounded-xl border border-border bg-card p-5 text-foreground text-base placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none transition-shadow"
+                placeholder="Describe your product or service..."
+              />
+            </div>
+            <div className="text-left">
+              <label className="block text-sm font-medium text-muted-foreground mb-2">Who do you want to sell to?</label>
+              <textarea
+                className="w-full h-36 md:h-44 rounded-xl border border-border bg-card p-5 text-foreground text-base placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none transition-shadow"
+                placeholder="Describe your ideal customer..."
+              />
+            </div>
+          </motion.div>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial="hidden" animate="visible" variants={fadeUp} custom={3}
