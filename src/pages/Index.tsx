@@ -34,7 +34,6 @@ const plans = [
     name: "Small Business",
     price: "$3,500",
     productId: "ed7cc3e3-aec0-428b-8b81-f5c645ba2c65",
-    popular: true,
     description: "Full web app, dashboard, payments, 3-5 features",
     features: [
       "Full multi-page web app",
