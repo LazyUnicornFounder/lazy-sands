@@ -119,8 +119,9 @@ const Index = () => {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
         <div className="container flex items-center justify-between h-20">
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="font-heading text-2xl tracking-wide text-foreground/90 cursor-pointer">
-            Lazy Sands
+          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="font-heading text-2xl tracking-wide text-foreground/90 cursor-pointer leading-[1.1]">
+            <span className="block">Lazy</span>
+            <span className="block">Sands</span>
           </a>
           <div className="flex items-center gap-1">
             <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView(); }}>
@@ -303,8 +304,9 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border/30 py-12 relative z-10">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground tracking-wide">
-          <span className="font-heading text-lg tracking-wide text-foreground/60">
-            Lazy Sands
+          <span className="font-heading text-lg tracking-wide text-foreground/60 leading-[1.1]">
+            <span className="block">Lazy</span>
+            <span className="block">Sands</span>
           </span>
           <div className="flex items-center gap-6">
             <Link to="/terms" className="hover:text-foreground transition-colors font-light">Terms of Service</Link>
