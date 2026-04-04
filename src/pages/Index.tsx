@@ -180,7 +180,7 @@ const Index = () => {
           >
             <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2 font-light">
-                <Twitter className="w-4 h-4" />
+                <XIcon className="w-4 h-4" />
                 Follow me on X
               </Button>
             </a>
