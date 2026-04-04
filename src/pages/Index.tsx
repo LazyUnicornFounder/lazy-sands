@@ -228,9 +228,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border/30 py-12 relative z-10">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground tracking-wide">
-          <span className="font-body font-medium uppercase tracking-widest text-foreground/60">
-            Lazy Sands
-          </span>
+          <img src="/logo.png" alt="Lazy Sands" className="h-8 opacity-60" />
           <p className="font-light">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </footer>
