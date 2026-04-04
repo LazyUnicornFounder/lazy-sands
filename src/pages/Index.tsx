@@ -26,8 +26,7 @@ const fadeUp = {
 const plans = [
   {
     name: "Solo Founder",
-    price: "$350",
-    originalPrice: "$700",
+    price: "$99",
     productId: "5cb2606d-ad4f-4f79-aac4-58ee56d01d2a",
     description: "Landing page, auth, 1 core feature, database — 2–3 days delivery",
     features: [
@@ -41,8 +40,7 @@ const plans = [
   },
   {
     name: "Small Business",
-    price: "$900",
-    originalPrice: "$1,800",
+    price: "$199",
     productId: "ed7cc3e3-aec0-428b-8b81-f5c645ba2c65",
     description: "Full web app, dashboard, payments, 3–5 features — 5–7 days delivery",
     features: [
@@ -56,8 +54,7 @@ const plans = [
   },
   {
     name: "Medium Business",
-    price: "$1,900",
-    originalPrice: "$3,800",
+    price: "$299",
     productId: "c97eb6bd-5975-4796-8576-9cc34a68fe6d",
     description: "Multi-user, admin panel, integrations, analytics — 10–15 days delivery",
     features: [
@@ -72,7 +69,6 @@ const plans = [
   {
     name: "Enterprise",
     price: "Custom",
-    originalPrice: "",
     productId: "",
     description: "Custom scope, SLA, dedicated support",
     features: [
@@ -133,14 +129,9 @@ const Index = () => {
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_center,hsl(38_80%_62%/0.06)_0%,transparent_70%)] pointer-events-none z-0" />
 
       {/* Discount Banner */}
-      {new Date() < new Date("2026-05-01") && (
-        <div className="fixed top-0 w-full z-[60] bg-primary text-primary-foreground text-center py-2 text-sm font-light tracking-wide">
-          🚀 Launch sale — <span className="font-medium">50% off all packages</span> with code <span className="font-mono font-medium">LAUNCH50</span> · Ends April 30
-        </div>
-      )}
 
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30" style={{ top: new Date() < new Date("2026-05-01") ? "36px" : "0px" }}>
+      <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
         <div className="container flex items-center justify-between h-20">
           <button type="button" onClick={jumpToTop} className="font-heading text-2xl tracking-wide text-foreground/90 cursor-pointer leading-[1.1] text-left">
             <span className="block">Lazy</span>
@@ -254,15 +245,9 @@ const Index = () => {
                 className="group relative p-7 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm flex flex-col hover:border-primary/20 hover:bg-card/70 transition-all duration-500"
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{plan.name}</p>
-                <div className="flex items-baseline gap-2 mb-2">
+                <div className="mb-2">
                   <p className="text-3xl font-heading">{plan.price}</p>
-                  {plan.originalPrice && (
-                    <p className="text-base text-muted-foreground/50 line-through font-light">{plan.originalPrice}</p>
-                  )}
                 </div>
-                {plan.originalPrice && (
-                  <span className="inline-block text-xs font-medium tracking-wide bg-primary/15 text-primary px-2 py-0.5 rounded-full mb-3">50% OFF — LAUNCH50</span>
-                )}
                 <p className="text-sm text-muted-foreground font-light mb-6 leading-relaxed">{plan.description}</p>
                 
                 <div className="h-px bg-border/50 mb-6" />
