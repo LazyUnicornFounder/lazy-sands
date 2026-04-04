@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { lovable } from "@/integrations/lovable/index";
+import { toast } from "sonner";
 
 interface CheckoutDialogProps {
   open: boolean;
