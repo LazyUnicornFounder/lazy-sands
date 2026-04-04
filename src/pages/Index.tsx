@@ -134,7 +134,7 @@ const Index = () => {
               Whether you need a full product or a helping hand, I've got you covered.
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {services.map((s, i) => (
               <motion.div
                 key={s.title}
