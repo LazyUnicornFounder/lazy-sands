@@ -113,7 +113,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
         <div className="container flex items-center justify-between h-20">
           <span className="font-body font-medium text-sm tracking-widest uppercase text-foreground/80">
-            LovableBuilder
+            Lazy Sands
           </span>
           <a href="#pricing">
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
