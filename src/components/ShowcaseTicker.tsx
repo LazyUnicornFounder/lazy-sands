@@ -7,7 +7,7 @@ import showcaseLazyCloud from "@/assets/showcase-lazy-cloud.png";
 const sites = [
   { src: showcaseLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://lazyunicorn.ai" },
   { src: showcaseBreakingMuse, name: "Breaking Muse", tagline: "Turn today's news into your next startup idea", url: "https://breakingmuse.ai" },
-  { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.ai" },
+  { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.com/" },
   { src: showcaseAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Follow the autonomous revolution in real time", url: "https://lazyfactoryventures.com" },
   { src: showcaseLazyCloud, name: "Lazy Cloud", tagline: "Bring your file server to life", url: "https://lazycloud.com" },
 ];
