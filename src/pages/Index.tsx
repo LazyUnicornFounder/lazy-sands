@@ -127,7 +127,7 @@ const Index = () => {
             </div>
           </motion.div>
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-start"
             initial="hidden" animate="visible" variants={fadeUp} custom={3}
           >
             <Button size="lg" className="glow-primary text-base px-8">
