@@ -36,7 +36,7 @@ const ShowcaseTicker = () => {
                 className="w-full h-auto block"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-background/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-400 flex flex-col items-center justify-center text-center p-4">
+              <div className="absolute inset-0 bg-black backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-400 flex flex-col items-center justify-center text-center p-4">
                 <p className="font-heading text-foreground text-lg mb-1">{site.name}</p>
                 <p className="text-muted-foreground text-xs font-light leading-relaxed">{site.tagline}</p>
               </div>
