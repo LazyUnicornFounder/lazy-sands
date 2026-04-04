@@ -62,7 +62,7 @@ const Terms = () => (
 
         <section>
           <h2 className="text-xl font-heading text-foreground mb-3">10. Contact</h2>
-          <p>For questions about these terms, please contact us at <a href="mailto:hello@lovablebuilder.com" className="text-primary/80 hover:text-primary underline underline-offset-4 transition-colors">hello@lovablebuilder.com</a>.</p>
+          <p>For questions about these terms, please contact us at <a href="mailto:lazy@lazyunicorn.ai" className="text-primary/80 hover:text-primary underline underline-offset-4 transition-colors">lazy@lazyunicorn.ai</a>.</p>
         </section>
       </div>
     </div>
