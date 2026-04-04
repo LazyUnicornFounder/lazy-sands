@@ -24,6 +24,16 @@ const services = [
     description: "Get your minimum viable product live in days, not months. Perfect for startups and founders.",
   },
   {
+    icon: Globe,
+    title: "Domain Setup",
+    description: "Buy or connect your custom domain, configure DNS, set up SSL — all handled for you seamlessly.",
+  },
+  {
+    icon: ArrowLeftRight,
+    title: "Project Transfer",
+    description: "Moving between workspaces or accounts? I'll handle the full transfer with zero downtime.",
+  },
+  {
     icon: Code2,
     title: "App Optimization",
     description: "Already on Lovable? I'll refine your design, fix bugs, and add features that delight users.",
