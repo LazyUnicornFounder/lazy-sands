@@ -170,6 +170,12 @@ const Index = () => {
               <motion.div
                 key={plan.name}
                 className="relative p-8 rounded-2xl border border-border bg-card flex flex-col"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i}
+              >
                 <h3 className="text-xl font-heading font-bold mb-1">{plan.name}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
                 <p className="text-4xl font-heading font-bold mb-6">{plan.price}</p>
@@ -184,8 +190,8 @@ const Index = () => {
                 {plan.productId ? (
                   <Button
                     size="lg"
-                    className={`w-full ${plan.popular ? "glow-primary" : ""}`}
-                    variant={plan.popular ? "default" : "outline"}
+                    className="w-full"
+                    variant="outline"
                     onClick={() => handleCheckout(plan.productId)}
                     disabled={loading === plan.productId}
                   >
