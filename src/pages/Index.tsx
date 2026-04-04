@@ -283,6 +283,10 @@ const Index = () => {
           <span className="font-heading text-lg tracking-wide text-foreground/60">
             Lazy Sands
           </span>
+          <div className="flex items-center gap-6">
+            <Link to="/terms" className="hover:text-foreground transition-colors font-light">Terms of Service</Link>
+            <Link to="/privacy" className="hover:text-foreground transition-colors font-light">Privacy Policy</Link>
+          </div>
           <p className="font-light">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </footer>
