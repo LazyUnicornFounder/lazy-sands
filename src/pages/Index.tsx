@@ -307,6 +307,14 @@ const Index = () => {
             <span className="block">Lazy</span>
             <span className="block">Sands</span>
           </span>
+          <div className="flex items-center gap-4">
+            <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer" className="text-muted-foreground/60 hover:text-foreground transition-colors">
+              <XIcon className="w-4 h-4" />
+            </a>
+            <a href="https://www.linkedin.com/in/saadsahawneh/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground/60 hover:text-foreground transition-colors">
+              <Linkedin className="w-4 h-4" />
+            </a>
+          </div>
           <div className="flex items-center gap-6">
             <Link to="/terms" className="hover:text-foreground transition-colors font-light">Terms of Service</Link>
             <Link to="/privacy" className="hover:text-foreground transition-colors font-light">Privacy Policy</Link>
