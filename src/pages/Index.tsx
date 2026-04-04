@@ -89,18 +89,24 @@ const Index = () => {
       {/* Hero */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(217_91%_60%/0.08)_0%,transparent_70%)]" />
-        <div className="container relative text-center max-w-4xl mx-auto">
+        <div className="container relative text-left max-w-4xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6">
               <Zap className="w-3.5 h-3.5" /> Lovable Expert
             </span>
           </motion.div>
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight tracking-tight mb-10"
+            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight tracking-tight mb-6"
             initial="hidden" animate="visible" variants={fadeUp} custom={1}
           >
             I'm a <span className="text-gradient">Platinum Level</span> builder on Lovable and I help you launch an autonomous business on Lovable.
           </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10"
+            initial="hidden" animate="visible" variants={fadeUp} custom={1.5}
+          >
+            Solo founder? I'll build your app, buy and set up your custom domain, and transfer the entire project to you — ready to run. Everything you need to launch your solo unicorn, handled end to end.
+          </motion.p>
           <motion.div
             className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
