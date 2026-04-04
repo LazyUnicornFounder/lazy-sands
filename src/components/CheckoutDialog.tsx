@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,6 +29,15 @@ const CheckoutDialog = ({ open, planName, planPrice, loading, onClose, onSubmit 
     setStep(1);
     onClose();
   };
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") handleClose();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open]);
 
   return (
     <AnimatePresence>
