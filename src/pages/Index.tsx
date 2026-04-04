@@ -245,15 +245,9 @@ const Index = () => {
                 className="group relative p-7 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm flex flex-col hover:border-primary/20 hover:bg-card/70 transition-all duration-500"
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{plan.name}</p>
-                <div className="flex items-baseline gap-2 mb-2">
+                <div className="mb-2">
                   <p className="text-3xl font-heading">{plan.price}</p>
-                  {plan.originalPrice && (
-                    <p className="text-base text-muted-foreground/50 line-through font-light">{plan.originalPrice}</p>
-                  )}
                 </div>
-                {plan.originalPrice && (
-                  <span className="inline-block text-xs font-medium tracking-wide bg-primary/15 text-primary px-2 py-0.5 rounded-full mb-3">50% OFF — LAUNCH50</span>
-                )}
                 <p className="text-sm text-muted-foreground font-light mb-6 leading-relaxed">{plan.description}</p>
                 
                 <div className="h-px bg-border/50 mb-6" />
