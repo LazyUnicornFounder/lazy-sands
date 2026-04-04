@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, CheckCircle2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
+import ShowcaseTicker from "@/components/ShowcaseTicker";
 import { useState } from "react";
 import { toast } from "sonner";
 
