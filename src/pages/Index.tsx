@@ -26,8 +26,8 @@ const fadeUp = {
 const plans = [
   {
     name: "Solo Founder",
-    price: "$750",
-    originalPrice: "$1,500",
+    price: "$350",
+    originalPrice: "$700",
     productId: "5cb2606d-ad4f-4f79-aac4-58ee56d01d2a",
     description: "Landing page, auth, 1 core feature, database",
     features: [
