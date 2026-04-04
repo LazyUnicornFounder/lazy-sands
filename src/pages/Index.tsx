@@ -69,7 +69,6 @@ const plans = [
   {
     name: "Enterprise",
     price: "Custom",
-    originalPrice: "",
     productId: "",
     description: "Custom scope, SLA, dedicated support",
     features: [
