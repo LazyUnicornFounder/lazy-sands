@@ -54,8 +54,7 @@ const plans = [
   },
   {
     name: "Medium Business",
-    price: "$1,900",
-    originalPrice: "$3,800",
+    price: "$299",
     productId: "c97eb6bd-5975-4796-8576-9cc34a68fe6d",
     description: "Multi-user, admin panel, integrations, analytics — 10–15 days delivery",
     features: [
