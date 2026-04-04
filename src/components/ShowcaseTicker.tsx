@@ -5,11 +5,11 @@ import showcaseAutonomousCapitalism from "@/assets/showcase-autonomous-capitalis
 import showcaseLazyCloud from "@/assets/showcase-lazy-cloud.png";
 
 const sites = [
-  { src: showcaseLazyUnicorn, alt: "Lazy Unicorn" },
-  { src: showcaseBreakingMuse, alt: "Breaking Muse" },
-  { src: showcaseSoloUnicorn, alt: "Solo Unicorn League" },
-  { src: showcaseAutonomousCapitalism, alt: "Autonomous Capitalism" },
-  { src: showcaseLazyCloud, alt: "Lazy Cloud" },
+  { src: showcaseLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://lazyunicorn.ai" },
+  { src: showcaseBreakingMuse, name: "Breaking Muse", tagline: "Turn today's news into your next startup idea", url: "https://breakingmuse.ai" },
+  { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.ai" },
+  { src: showcaseAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Follow the autonomous revolution in real time", url: "https://lazyfactoryventures.com" },
+  { src: showcaseLazyCloud, name: "Lazy Cloud", tagline: "Bring your file server to life", url: "https://lazycloud.com" },
 ];
 
 const ShowcaseTicker = () => {
@@ -23,20 +23,26 @@ const ShowcaseTicker = () => {
       <div className="relative">
         <div className="flex gap-4 animate-ticker">
           {doubled.map((site, i) => (
-            <div
-              key={`${site.alt}-${i}`}
-              className="shrink-0 w-72 md:w-80 rounded-lg overflow-hidden border border-border shadow-sm"
+            <a
+              key={`${site.name}-${i}`}
+              href={site.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 w-72 md:w-80 rounded-lg overflow-hidden border border-border shadow-sm relative group block"
             >
               <img
                 src={site.src}
-                alt={site.alt}
+                alt={site.name}
                 className="w-full h-auto block"
                 loading="lazy"
               />
-            </div>
+              <div className="absolute inset-0 bg-foreground/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                <p className="font-heading font-bold text-background text-lg mb-1">{site.name}</p>
+                <p className="text-background/70 text-xs leading-relaxed">{site.tagline}</p>
+              </div>
+            </a>
           ))}
         </div>
-        {/* Fade edges */}
         <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
         <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
       </div>
