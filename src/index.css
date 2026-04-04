@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,46 +6,44 @@
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 220 15% 13%;
+    --background: 240 6% 7%;
+    --foreground: 40 20% 92%;
 
-    --card: 40 15% 94%;
-    --card-foreground: 220 15% 13%;
+    --card: 240 5% 10%;
+    --card-foreground: 40 20% 92%;
 
-    --popover: 40 15% 94%;
-    --popover-foreground: 220 15% 13%;
+    --popover: 240 5% 10%;
+    --popover-foreground: 40 20% 92%;
 
-    --primary: 217 91% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 38 80% 62%;
+    --primary-foreground: 240 6% 7%;
 
-    --secondary: 40 10% 90%;
-    --secondary-foreground: 220 15% 13%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 40 20% 92%;
 
-    --muted: 40 10% 90%;
-    --muted-foreground: 220 10% 40%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 40 8% 55%;
 
-    --accent: 217 91% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 38 80% 62%;
+    --accent-foreground: 240 6% 7%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 86%;
-    --input: 220 10% 86%;
-    --ring: 217 91% 50%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 38 80% 62%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --glow: 217 91% 50%;
-
-    --sidebar-background: 40 15% 94%;
-    --sidebar-foreground: 220 15% 13%;
-    --sidebar-primary: 217 91% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 10% 90%;
-    --sidebar-accent-foreground: 220 15% 13%;
-    --sidebar-border: 220 10% 86%;
-    --sidebar-ring: 217 91% 50%;
+    --sidebar-background: 240 5% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 38 80% 62%;
+    --sidebar-primary-foreground: 240 6% 7%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 240 4% 18%;
+    --sidebar-ring: 38 80% 62%;
   }
 }
 
@@ -65,13 +63,25 @@
 
 @layer utilities {
   .glow-primary {
-    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 60px -15px hsl(var(--primary) / 0.3);
   }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(200,90%,70%)];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(38,80%,62%)] to-[hsl(28,90%,72%)];
   }
-  .bg-glow {
-    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--primary) / 0.06), transparent 40%);
+  .card-shine {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card)) 0%,
+      hsl(240 5% 12%) 50%,
+      hsl(var(--card)) 100%
+    );
+  }
+  .border-gradient {
+    border-image: linear-gradient(
+      180deg,
+      hsl(var(--border)) 0%,
+      hsl(240 4% 12%) 100%
+    ) 1;
   }
 }
 
@@ -87,20 +97,28 @@
   animation-play-state: paused;
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-.shimmer-badge {
-  background-image: linear-gradient(
-    110deg,
-    hsl(var(--primary) / 0.05) 0%,
-    hsl(var(--primary) / 0.05) 40%,
-    hsl(var(--primary) / 0.25) 50%,
-    hsl(var(--primary) / 0.05) 60%,
-    hsl(var(--primary) / 0.05) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  30% { transform: translate(3%, -15%); }
+  50% { transform: translate(-15%, 5%); }
+  70% { transform: translate(8%, 10%); }
+  90% { transform: translate(-10%, 15%); }
+}
+
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  animation: grain 8s steps(10) infinite;
+  pointer-events: none;
+  z-index: 0;
 }

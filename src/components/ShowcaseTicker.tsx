@@ -17,18 +17,18 @@ const ShowcaseTicker = () => {
 
   return (
     <div className="w-full overflow-hidden">
-      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4 font-medium">
-        Websites I've built
+      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-5">
+        Recent builds
       </p>
       <div className="relative">
-        <div className="flex gap-4 animate-ticker">
+        <div className="flex gap-5 animate-ticker">
           {doubled.map((site, i) => (
             <a
               key={`${site.name}-${i}`}
               href={site.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 w-72 md:w-80 rounded-lg overflow-hidden border border-border shadow-sm relative group block"
+              className="shrink-0 w-72 md:w-80 rounded-lg overflow-hidden border border-border/40 relative group block transition-all duration-500 hover:border-primary/20"
             >
               <img
                 src={site.src}
@@ -36,15 +36,15 @@ const ShowcaseTicker = () => {
                 className="w-full h-auto block"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
-                <p className="font-heading font-bold text-white text-lg mb-1">{site.name}</p>
-                <p className="text-white/70 text-xs leading-relaxed">{site.tagline}</p>
+              <div className="absolute inset-0 bg-background/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-400 flex flex-col items-center justify-center text-center p-4">
+                <p className="font-heading text-foreground text-lg mb-1">{site.name}</p>
+                <p className="text-muted-foreground text-xs font-light leading-relaxed">{site.tagline}</p>
               </div>
             </a>
           ))}
         </div>
-        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight, CheckCircle2, Zap } from "lucide-react";
+import { Sparkles, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import ShowcaseTicker from "@/components/ShowcaseTicker";
@@ -7,11 +7,11 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
+    transition: { delay: i * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
   }),
 };
 
@@ -34,7 +34,7 @@ const plans = [
     name: "Small Business",
     price: "$3,500",
     productId: "ed7cc3e3-aec0-428b-8b81-f5c645ba2c65",
-    description: "Full web app, dashboard, payments, 3-5 features",
+    description: "Full web app, dashboard, payments, 3–5 features",
     features: [
       "Full multi-page web app",
       "Dashboard included",
@@ -73,6 +73,7 @@ const plans = [
     ],
   },
 ];
+
 const Index = () => {
   const [loading, setLoading] = useState<string | null>(null);
 
@@ -95,59 +96,72 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative noise-bg overflow-hidden">
+      {/* Ambient glow */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_center,hsl(38_80%_62%/0.06)_0%,transparent_70%)] pointer-events-none z-0" />
+
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-        <div className="container flex items-center justify-between h-16">
-          <span className="font-heading font-bold text-xl text-foreground">
-            <Sparkles className="inline-block w-5 h-5 text-primary mr-2" />
+      <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
+        <div className="container flex items-center justify-between h-20">
+          <span className="font-body font-medium text-sm tracking-widest uppercase text-foreground/80">
             LovableBuilder
           </span>
+          <a href="#pricing">
+            <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
+              Pricing
+            </Button>
+          </a>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="relative pt-32 pb-10 md:pt-44 md:pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(217_91%_60%/0.08)_0%,transparent_70%)]" />
-        <div className="container relative text-left max-w-4xl mx-auto">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            <span className="inline-flex items-center gap-2 text-foreground text-sm font-medium mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-primary/50" /> Lovable certified Platinum builder
-            </span>
-          </motion.div>
+      <section className="relative pt-40 pb-16 md:pt-52 md:pb-24">
+        <div className="container relative z-10 max-w-5xl mx-auto">
+          <motion.p
+            className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8 flex items-center gap-2"
+            initial="hidden" animate="visible" variants={fadeUp} custom={0}
+          >
+            <Sparkles className="w-3 h-3 text-primary/60" />
+            Lovable certified Platinum builder
+          </motion.p>
+
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight tracking-tight mb-6"
+            className="text-5xl md:text-6xl lg:text-7xl font-heading leading-[1.1] tracking-tight mb-8"
             initial="hidden" animate="visible" variants={fadeUp} custom={1}
           >
-            I'm a <span className="text-gradient">Platinum Level</span> builder on Lovable and I help you launch a business on Lovable.
+            I build businesses<br />
+            on <span className="text-gradient italic">Lovable</span>
           </motion.h1>
+
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-16 font-light leading-relaxed"
             initial="hidden" animate="visible" variants={fadeUp} custom={1.5}
           >
             Whether you're a solo founder needing a landing page, a small business launching a full web app with payments, or a growing company that needs multi-user dashboards and integrations — I'll build it, deploy it, and hand it over ready to run.
           </motion.p>
+
           <motion.div
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
-            className="mb-10"
+            className="mb-20"
           >
             <ShowcaseTicker />
           </motion.div>
+
           <motion.div
-            className="grid md:grid-cols-2 gap-6 max-w-3xl mb-10"
+            className="grid md:grid-cols-2 gap-8 max-w-3xl"
             initial="hidden" animate="visible" variants={fadeUp} custom={2.5}
           >
-            <div className="text-left">
-              <label className="block text-sm font-medium text-muted-foreground mb-2">What do you want to sell?</label>
+            <div>
+              <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">What do you want to sell?</label>
               <textarea
-                className="w-full h-36 md:h-44 rounded-xl border border-border bg-card p-5 text-foreground text-base placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none transition-shadow"
+                className="w-full h-36 md:h-44 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm p-5 text-foreground text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 resize-none transition-all duration-300 font-light"
                 placeholder="Describe your product or service..."
               />
             </div>
-            <div className="text-left">
-              <label className="block text-sm font-medium text-muted-foreground mb-2">Who do you want to sell to?</label>
+            <div>
+              <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Who do you want to sell to?</label>
               <textarea
-                className="w-full h-36 md:h-44 rounded-xl border border-border bg-card p-5 text-foreground text-base placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none transition-shadow"
+                className="w-full h-36 md:h-44 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm p-5 text-foreground text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 resize-none transition-all duration-300 font-light"
                 placeholder="Describe your ideal customer..."
               />
             </div>
@@ -155,58 +169,67 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="container max-w-5xl mx-auto">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
+
       {/* Pricing */}
-      <section className="py-16 md:py-24">
+      <section id="pricing" className="py-24 md:py-32 relative z-10">
         <div className="container">
           <motion.div
-            className="text-center mb-14"
+            className="text-center mb-20"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Choose your package</h2>
-            <p className="text-muted-foreground">One-time payment. No subscriptions. You own everything.</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Pricing</p>
+            <h2 className="text-4xl md:text-5xl font-heading mb-5">Choose your package</h2>
+            <p className="text-muted-foreground font-light">One-time payment. No subscriptions. You own everything.</p>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {plans.map((plan, i) => (
               <motion.div
                 key={plan.name}
-                className="relative p-8 rounded-2xl border border-border bg-card flex flex-col"
+                className="group relative p-7 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm flex flex-col hover:border-primary/20 hover:bg-card/70 transition-all duration-500"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
               >
-                <h3 className="text-xl font-heading font-bold mb-1">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
-                <p className="text-4xl font-heading font-bold mb-6">{plan.price}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{plan.name}</p>
+                <p className="text-3xl font-heading mb-2">{plan.price}</p>
+                <p className="text-sm text-muted-foreground font-light mb-6 leading-relaxed">{plan.description}</p>
+                
+                <div className="h-px bg-border/50 mb-6" />
+
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground font-light">
+                      <Check className="w-3.5 h-3.5 text-primary/70 mt-0.5 shrink-0" />
                       {f}
                     </li>
                   ))}
                 </ul>
+
                 {plan.productId ? (
                   <Button
                     size="lg"
-                    className="w-full"
-                    variant="outline"
+                    className="w-full bg-transparent border border-border/70 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 font-light tracking-wide"
                     onClick={() => handleCheckout(plan.productId)}
                     disabled={loading === plan.productId}
                   >
-                    {loading === plan.productId ? "Loading..." : "Buy Now"}
-                    {loading !== plan.productId && <ArrowRight className="ml-2 w-4 h-4" />}
+                    {loading === plan.productId ? "Loading..." : "Get Started"}
+                    {loading !== plan.productId && <ArrowRight className="ml-2 w-3.5 h-3.5" />}
                   </Button>
                 ) : (
                   <Button
                     size="lg"
-                    className="w-full"
-                    variant="outline"
+                    className="w-full bg-transparent border border-border/70 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 font-light tracking-wide"
                     onClick={() => window.location.href = "mailto:hello@lovablebuilder.com"}
                   >
                     Contact Us
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    <ArrowRight className="ml-2 w-3.5 h-3.5" />
                   </Button>
                 )}
               </motion.div>
@@ -216,13 +239,12 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-8">
-        <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <span className="font-heading font-semibold text-foreground">
-            <Sparkles className="inline-block w-4 h-4 text-primary mr-1" />
+      <footer className="border-t border-border/30 py-12 relative z-10">
+        <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground tracking-wide">
+          <span className="font-body font-medium uppercase tracking-widest text-foreground/60">
             LovableBuilder
           </span>
-          <p>© {new Date().getFullYear()} All rights reserved.</p>
+          <p className="font-light">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </footer>
     </div>
