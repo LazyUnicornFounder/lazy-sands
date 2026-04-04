@@ -3,6 +3,7 @@ import { Sparkles, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import ShowcaseTicker from "@/components/ShowcaseTicker";
+import CheckoutDialog from "@/components/CheckoutDialog";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -76,6 +77,7 @@ const plans = [
 
 const Index = () => {
   const [loading, setLoading] = useState<string | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<typeof plans[0] | null>(null);
 
   const handleCheckout = async (productId: string) => {
     setLoading(productId);
@@ -93,6 +95,13 @@ const Index = () => {
     } finally {
       setLoading(null);
     }
+  };
+
+  const handleDialogSubmit = (sellWhat: string, sellTo: string) => {
+    if (!selectedPlan?.productId) return;
+    // Store answers for the success page
+    localStorage.setItem("checkout_context", JSON.stringify({ sellWhat, sellTo, plan: selectedPlan.name }));
+    handleCheckout(selectedPlan.productId);
   };
 
   return (
@@ -143,29 +152,8 @@ const Index = () => {
 
           <motion.div
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
-            className="mb-20"
           >
             <ShowcaseTicker />
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-2 gap-8 max-w-3xl"
-            initial="hidden" animate="visible" variants={fadeUp} custom={2.5}
-          >
-            <div>
-              <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">What do you want to sell?</label>
-              <textarea
-                className="w-full h-36 md:h-44 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm p-5 text-foreground text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 resize-none transition-all duration-300 font-light"
-                placeholder="Describe your product or service..."
-              />
-            </div>
-            <div>
-              <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Who do you want to sell to?</label>
-              <textarea
-                className="w-full h-36 md:h-44 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm p-5 text-foreground text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 resize-none transition-all duration-300 font-light"
-                placeholder="Describe your ideal customer..."
-              />
-            </div>
           </motion.div>
         </div>
       </section>
@@ -218,11 +206,10 @@ const Index = () => {
                   <Button
                     size="lg"
                     className="w-full bg-transparent border border-border/70 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 font-light tracking-wide"
-                    onClick={() => handleCheckout(plan.productId)}
-                    disabled={loading === plan.productId}
+                    onClick={() => setSelectedPlan(plan)}
                   >
-                    {loading === plan.productId ? "Loading..." : "Get Started"}
-                    {loading !== plan.productId && <ArrowRight className="ml-2 w-3.5 h-3.5" />}
+                    Get Started
+                    <ArrowRight className="ml-2 w-3.5 h-3.5" />
                   </Button>
                 ) : (
                   <Button
@@ -249,6 +236,16 @@ const Index = () => {
           <p className="font-light">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Checkout Dialog */}
+      <CheckoutDialog
+        open={!!selectedPlan}
+        planName={selectedPlan?.name ?? ""}
+        planPrice={selectedPlan?.price ?? ""}
+        loading={loading === selectedPlan?.productId}
+        onClose={() => setSelectedPlan(null)}
+        onSubmit={handleDialogSubmit}
+      />
     </div>
   );
 };
