@@ -122,11 +122,28 @@ const Index = () => {
           <span className="font-heading text-2xl tracking-wide text-foreground/90">
             Lazy Sands
           </span>
-          <a href="#pricing">
-            <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
-              Pricing
-            </Button>
-          </a>
+          <div className="flex items-center gap-1">
+            <a href="#pricing">
+              <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
+                Pricing
+              </Button>
+            </a>
+            <a href="#about">
+              <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
+                About
+              </Button>
+            </a>
+            <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground w-9 h-9">
+                <XIcon className="w-4 h-4" />
+              </Button>
+            </a>
+            <a href="https://www.linkedin.com/in/saadsahawneh/" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground w-9 h-9">
+                <Linkedin className="w-4 h-4" />
+              </Button>
+            </a>
+          </div>
         </div>
       </nav>
 
