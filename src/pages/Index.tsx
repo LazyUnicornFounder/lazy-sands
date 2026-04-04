@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Globe, ArrowLeftRight } from "lucide-react";
 import { Sparkles, Layout, Rocket, MessageSquare, ArrowRight, CheckCircle2, Zap, Users, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
