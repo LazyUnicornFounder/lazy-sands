@@ -131,7 +131,7 @@ const Index = () => {
       {/* Discount Banner */}
 
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30" style={{ top: new Date() < new Date("2026-05-01") ? "36px" : "0px" }}>
+      <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-border/30">
         <div className="container flex items-center justify-between h-20">
           <button type="button" onClick={jumpToTop} className="font-heading text-2xl tracking-wide text-foreground/90 cursor-pointer leading-[1.1] text-left">
             <span className="block">Lazy</span>
