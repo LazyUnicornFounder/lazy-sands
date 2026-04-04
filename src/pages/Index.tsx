@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Sparkles, ArrowRight, Check, Twitter, Linkedin } from "lucide-react";
+import { Sparkles, ArrowRight, Check, Linkedin } from "lucide-react";
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import ShowcaseTicker from "@/components/ShowcaseTicker";
@@ -116,11 +122,28 @@ const Index = () => {
           <span className="font-heading text-2xl tracking-wide text-foreground/90">
             Lazy Sands
           </span>
-          <a href="#pricing">
-            <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
-              Pricing
-            </Button>
-          </a>
+          <div className="flex items-center gap-1">
+            <a href="#pricing">
+              <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
+                Pricing
+              </Button>
+            </a>
+            <a href="#about">
+              <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide">
+                About
+              </Button>
+            </a>
+            <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground w-9 h-9">
+                <XIcon className="w-4 h-4" />
+              </Button>
+            </a>
+            <a href="https://www.linkedin.com/in/saadsahawneh/" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground w-9 h-9">
+                <Linkedin className="w-4 h-4" />
+              </Button>
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -157,7 +180,7 @@ const Index = () => {
           >
             <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2 font-light">
-                <Twitter className="w-4 h-4" />
+                <XIcon className="w-4 h-4" />
                 Follow me on X
               </Button>
             </a>
