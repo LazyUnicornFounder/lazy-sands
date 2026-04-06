@@ -4,14 +4,18 @@ import showcaseSoloUnicorn from "@/assets/showcase-solo-unicorn.png";
 import showcaseAutonomousCapitalism from "@/assets/showcase-autonomous-capitalism.png";
 import showcaseLazyCloud from "@/assets/showcase-lazy-cloud.png";
 import showcaseLazyCanvas from "@/assets/showcase-lazy-canvas.png";
+import showcaseLazyExit from "@/assets/showcase-lazy-exit.png";
+import showcaseLazySands from "@/assets/showcase-lazy-sands.png";
 
 const sites = [
-  { src: showcaseLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://lazyunicorn.ai" },
-  { src: showcaseBreakingMuse, name: "Breaking Muse", tagline: "Turn today's news into your next startup idea", url: "https://breakingmuse.ai" },
-  { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.com/" },
-  { src: showcaseAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Follow the autonomous revolution in real time", url: "https://lazyfactoryventures.com" },
-  { src: showcaseLazyCloud, name: "Lazy Cloud", tagline: "Bring your file server to life", url: "https://lazycloud.com" },
+  { src: showcaseAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Autonomous news about autonomous news", url: "https://lazyfactoryventures.com" },
+  { src: showcaseBreakingMuse, name: "Breaking Muse", tagline: "News powered business ideas", url: "https://breakingmuse.ai" },
   { src: showcaseLazyCanvas, name: "Lazy Canvas", tagline: "Design content for anything", url: "https://lazycanvas.com" },
+  { src: showcaseLazyCloud, name: "Lazy Cloud", tagline: "Enterprise brains", url: "https://lazycloud.com" },
+  { src: showcaseLazyExit, name: "Lazy Exit", tagline: "The marketplace for autonomous businesses", url: "https://lazyexit.com" },
+  { src: showcaseLazySands, name: "Lazy Sands", tagline: "Diamond-rated Lovable agency", url: "https://lazysands.com" },
+  { src: showcaseLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://lazyunicorn.ai" },
+  { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.com/" },
 ];
 
 const ShowcaseTicker = () => {
