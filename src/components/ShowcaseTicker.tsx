@@ -11,6 +11,7 @@ const sites = [
   { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.com/" },
   { src: showcaseAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Follow the autonomous revolution in real time", url: "https://lazyfactoryventures.com" },
   { src: showcaseLazyCloud, name: "Lazy Cloud", tagline: "Bring your file server to life", url: "https://lazycloud.com" },
+  { src: showcaseLazyCanvas, name: "Lazy Canvas", tagline: "Design content for anything", url: "https://lazycanvas.com" },
 ];
 
 const ShowcaseTicker = () => {
