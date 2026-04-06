@@ -3,6 +3,7 @@ import showcaseBreakingMuse from "@/assets/showcase-breaking-muse.png";
 import showcaseSoloUnicorn from "@/assets/showcase-solo-unicorn.png";
 import showcaseAutonomousCapitalism from "@/assets/showcase-autonomous-capitalism.png";
 import showcaseLazyCloud from "@/assets/showcase-lazy-cloud.png";
+import showcaseLazyCanvas from "@/assets/showcase-lazy-canvas.png";
 
 const sites = [
   { src: showcaseLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://lazyunicorn.ai" },
@@ -10,6 +11,7 @@ const sites = [
   { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.com/" },
   { src: showcaseAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Follow the autonomous revolution in real time", url: "https://lazyfactoryventures.com" },
   { src: showcaseLazyCloud, name: "Lazy Cloud", tagline: "Bring your file server to life", url: "https://lazycloud.com" },
+  { src: showcaseLazyCanvas, name: "Lazy Canvas", tagline: "Design content for anything", url: "https://lazycanvas.com" },
 ];
 
 const ShowcaseTicker = () => {
