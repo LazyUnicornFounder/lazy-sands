@@ -3,6 +3,7 @@ import showcaseBreakingMuse from "@/assets/showcase-breaking-muse.png";
 import showcaseSoloUnicorn from "@/assets/showcase-solo-unicorn.png";
 import showcaseAutonomousCapitalism from "@/assets/showcase-autonomous-capitalism.png";
 import showcaseLazyCloud from "@/assets/showcase-lazy-cloud.png";
+import showcaseLazyCanvas from "@/assets/showcase-lazy-canvas.png";
 
 const sites = [
   { src: showcaseLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://lazyunicorn.ai" },
