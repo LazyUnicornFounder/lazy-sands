@@ -166,7 +166,7 @@ const Index = () => {
             initial="hidden" animate="visible" variants={fadeUp} custom={0}
           >
             <Sparkles className="w-3 h-3 text-primary/60" />
-            Lovable Platinum certified builder
+            Lovable Diamond certified builder
           </motion.p>
 
           <motion.h1
