@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import ShowcaseTicker from "@/components/ShowcaseTicker";
 import CheckoutDialog from "@/components/CheckoutDialog";
+import ShopSection, { type ShopProduct } from "@/components/ShopSection";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -85,6 +86,7 @@ const plans = [
 const Index = () => {
   const [loading, setLoading] = useState<string | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<typeof plans[0] | null>(null);
+  const [selectedShopProduct, setSelectedShopProduct] = useState<{ name: string; price: string; productId: string } | null>(null);
 
   const jumpToTop = () => {
     window.scrollTo(0, 0);
@@ -138,6 +140,9 @@ const Index = () => {
             <span className="block">Sands</span>
           </button>
           <div className="flex items-center gap-1">
+            <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("shop")}>
+              Shop
+            </Button>
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("pricing")}>
               Pricing
             </Button>
