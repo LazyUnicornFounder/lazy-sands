@@ -161,20 +161,13 @@ const Index = () => {
       {/* Hero */}
       <section className="relative pt-48 pb-16 md:pt-60 md:pb-24">
         <div className="container relative z-10 max-w-5xl mx-auto">
-          <motion.p
-            className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8 flex items-center gap-2"
+          <motion.h1
+            className="text-6xl md:text-7xl lg:text-8xl font-heading leading-[1.05] tracking-tight mb-8"
             initial="hidden" animate="visible" variants={fadeUp} custom={0}
           >
-            <Sparkles className="w-3 h-3 text-primary/60" />
-            Lovable Diamond certified builder
-          </motion.p>
-
-          <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-heading leading-[1.1] tracking-tight mb-8"
-            initial="hidden" animate="visible" variants={fadeUp} custom={1}
-          >
-            <span className="text-gradient italic">Lovable</span> Diamond<br />
-            certified builder
+            Diamond<br />
+            certified <span className="text-gradient italic">Lovable</span><br />
+            agency
           </motion.h1>
 
           <motion.p
