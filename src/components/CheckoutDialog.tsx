@@ -83,6 +83,7 @@ const CheckoutDialog = ({ open, planName, planPrice, loading, onClose, onSubmit 
                     className="w-full h-32 rounded-lg border border-border/50 bg-background/50 p-5 text-foreground text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 resize-none transition-all duration-300 font-light"
                     placeholder="Describe your app, website, internal tool or anything else you want to build..."
                   />
+                </div>
               </div>
 
               <Button
