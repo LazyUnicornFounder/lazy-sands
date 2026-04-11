@@ -12,6 +12,7 @@ import { supabase } from "@/integrations/supabase/client";
 import ShowcaseTicker from "@/components/ShowcaseTicker";
 import CheckoutDialog from "@/components/CheckoutDialog";
 import ShopSection, { type ShopProduct } from "@/components/ShopSection";
+import PortfolioSection from "@/components/PortfolioSection";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -146,8 +147,10 @@ const Index = () => {
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("pricing")}>
               Pricing
             </Button>
+            <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("portfolio")}>
+              Portfolio
+            </Button>
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("about")}>
-              About
             </Button>
             <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground w-9 h-9">
@@ -216,6 +219,13 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Portfolio */}
+      <div className="container max-w-5xl mx-auto">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
+
+      <PortfolioSection />
 
       {/* Divider */}
       <div className="container max-w-5xl mx-auto">
