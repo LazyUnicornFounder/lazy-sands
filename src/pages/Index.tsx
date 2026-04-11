@@ -282,6 +282,13 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Shop */}
+      <div className="container max-w-5xl mx-auto">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
+
+      <ShopSection onSelectProduct={(product) => setSelectedShopProduct(product)} />
+
       {/* About */}
       <div className="container max-w-5xl mx-auto">
         <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -334,7 +341,7 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Checkout Dialog */}
+      {/* Checkout Dialog - Plans */}
       <CheckoutDialog
         open={!!selectedPlan}
         planName={selectedPlan?.name ?? ""}
@@ -342,6 +349,20 @@ const Index = () => {
         loading={loading === selectedPlan?.productId}
         onClose={() => setSelectedPlan(null)}
         onSubmit={handleDialogSubmit}
+      />
+
+      {/* Checkout Dialog - Shop */}
+      <CheckoutDialog
+        open={!!selectedShopProduct}
+        planName={selectedShopProduct?.name ?? ""}
+        planPrice={selectedShopProduct?.price ?? ""}
+        loading={loading === selectedShopProduct?.productId}
+        onClose={() => setSelectedShopProduct(null)}
+        onSubmit={(sellWhat, sellTo) => {
+          if (!selectedShopProduct?.productId) return;
+          localStorage.setItem("checkout_context", JSON.stringify({ sellWhat, sellTo, plan: selectedShopProduct.name }));
+          handleCheckout(selectedShopProduct.productId);
+        }}
       />
     </div>
   );
