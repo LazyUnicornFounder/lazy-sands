@@ -148,6 +148,7 @@ const Index = () => {
               Portfolio
             </Button>
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("about")}>
+              About
             </Button>
             <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground w-9 h-9">
