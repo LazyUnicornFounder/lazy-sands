@@ -1,21 +1,29 @@
-import showcaseLazyUnicorn from "@/assets/showcase-lazy-unicorn.png";
-import showcaseBreakingMuse from "@/assets/showcase-breaking-muse.png";
-import showcaseSoloUnicorn from "@/assets/showcase-solo-unicorn.png";
-import showcaseAutonomousCapitalism from "@/assets/showcase-autonomous-capitalism.png";
-import showcaseLazyCloud from "@/assets/showcase-lazy-cloud.png";
-import showcaseLazyCanvas from "@/assets/showcase-lazy-canvas.png";
-import showcaseLazyExit from "@/assets/showcase-lazy-exit.png";
-import showcaseLazySands from "@/assets/showcase-lazy-sands.png";
+import portfolioAutonomousCapitalism from "@/assets/portfolio-autonomous-capitalism.png";
+import portfolioBreakingMuse from "@/assets/portfolio-breaking-muse.png";
+import portfolioLazyCanvas from "@/assets/portfolio-lazy-canvas.png";
+import portfolioLazyDecacorn from "@/assets/portfolio-lazy-decacorn.png";
+import portfolioLazyCloud from "@/assets/portfolio-lazy-cloud.png";
+import portfolioLazyExit from "@/assets/portfolio-lazy-exit.png";
+import portfolioLazySands from "@/assets/portfolio-lazy-sands.png";
+import portfolioLazyTones from "@/assets/portfolio-lazy-tones.png";
+import portfolioLazyRentabiz from "@/assets/portfolio-lazy-rentabiz.png";
+import portfolioLazyUnicorn from "@/assets/portfolio-lazy-unicorn.png";
+import portfolioJordanFutureLabs from "@/assets/portfolio-jordan-future-labs.png";
+import portfolioSoloUnicornLeague from "@/assets/portfolio-solo-unicorn-league.png";
 
 const sites = [
-  { src: showcaseAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Autonomous news about autonomous news", url: "https://lazyfactoryventures.com" },
-  { src: showcaseBreakingMuse, name: "Breaking Muse", tagline: "News powered business ideas", url: "https://breakingmuse.ai" },
-  { src: showcaseLazyCanvas, name: "Lazy Canvas", tagline: "Design content for anything", url: "https://lazycanvas.com" },
-  { src: showcaseLazyCloud, name: "Lazy Cloud", tagline: "Enterprise brains", url: "https://lazycloud.com" },
-  { src: showcaseLazyExit, name: "Lazy Exit", tagline: "The marketplace for autonomous businesses", url: "https://lazyexit.com" },
-  { src: showcaseLazySands, name: "Lazy Sands", tagline: "Diamond-rated Lovable agency", url: "https://lazysands.com" },
-  { src: showcaseLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://lazyunicorn.ai" },
-  { src: showcaseSoloUnicorn, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.com/" },
+  { src: portfolioAutonomousCapitalism, name: "Autonomous Capitalism", tagline: "Autonomous news about autonomous news", url: "https://autonomouscapitalism.com/" },
+  { src: portfolioBreakingMuse, name: "Breaking Muse", tagline: "News powered business ideas", url: "https://breakingmuse.ai/" },
+  { src: portfolioLazyCanvas, name: "Lazy Canvas", tagline: "Design content for anything", url: "https://lazycanvas.com/" },
+  { src: portfolioLazyDecacorn, name: "Lazy Decacorn", tagline: "The prediction game for solo founders", url: "https://lazydecacorn.com/" },
+  { src: portfolioLazyCloud, name: "Lazy Cloud", tagline: "Enterprise brains", url: "https://lazycloud.ai/" },
+  { src: portfolioLazyExit, name: "Lazy Exit", tagline: "The marketplace for autonomous businesses", url: "https://lazyexit.com/" },
+  { src: portfolioLazySands, name: "Lazy Sands", tagline: "Diamond-rated Lovable agency", url: "https://lazysands.com/" },
+  { src: portfolioLazyTones, name: "Lazy Tones", tagline: "Mood boards in 60 seconds", url: "https://lazytones.com/" },
+  { src: portfolioLazyRentabiz, name: "Lazy Rent-A-Biz", tagline: "Rent a business, skip the build", url: "https://lazyrentabiz.com/" },
+  { src: portfolioLazyUnicorn, name: "Lazy Unicorn", tagline: "Launch your autonomous business on Lovable", url: "https://www.lazyunicorn.ai/" },
+  { src: portfolioJordanFutureLabs, name: "Jordan Future Labs", tagline: "Startup ideas worth building in Jordan", url: "https://jordanfuturelabs.com/" },
+  { src: portfolioSoloUnicornLeague, name: "Solo Unicorn League", tagline: "The leaderboard for solo founders racing to $1 billion", url: "https://solounicornleague.com/" },
 ];
 
 const ShowcaseTicker = () => {
