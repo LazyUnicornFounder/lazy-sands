@@ -173,9 +173,8 @@ const Index = () => {
             className="text-5xl md:text-6xl lg:text-7xl font-heading leading-[1.1] tracking-tight mb-8"
             initial="hidden" animate="visible" variants={fadeUp} custom={1}
           >
-            I launch and build your<br />
-            businesses and apps<br />
-            on <span className="text-gradient italic">Lovable.</span>
+            <span className="text-gradient italic">Lovable</span> Diamond<br />
+            certified builder
           </motion.h1>
 
           <motion.p
