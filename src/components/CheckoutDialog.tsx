@@ -84,24 +84,13 @@ const CheckoutDialog = ({ open, planName, planPrice, loading, onClose, onSubmit 
                     placeholder="Describe your app, website, internal tool or anything else you want to build..."
                   />
                 </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                    Who do you want to sell to?
-                  </label>
-                  <textarea
-                    value={sellTo}
-                    onChange={(e) => setSellTo(e.target.value)}
-                    className="w-full h-32 rounded-lg border border-border/50 bg-background/50 p-5 text-foreground text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 resize-none transition-all duration-300 font-light"
-                    placeholder="Describe your ideal customer..."
-                  />
-                </div>
               </div>
 
               <Button
                 size="lg"
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-light tracking-wide text-base py-6"
                 onClick={handleSubmit}
-                disabled={loading || !sellWhat.trim() || !sellTo.trim()}
+                disabled={loading || !sellWhat.trim()}
               >
                 {loading ? "Loading..." : `Continue to Payment — ${planPrice}`}
                 {!loading && <ArrowRight className="ml-2 w-4 h-4" />}
