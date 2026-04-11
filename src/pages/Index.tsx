@@ -167,7 +167,7 @@ const Index = () => {
       <section className="relative pt-48 pb-16 md:pt-60 md:pb-24">
         <div className="container relative z-10 max-w-5xl mx-auto">
           <motion.h1
-            className="text-8xl md:text-9xl lg:text-[12rem] font-heading leading-[1.05] tracking-tight mb-8"
+            className="text-6xl md:text-8xl lg:text-[9rem] font-heading leading-[1.05] tracking-tight mb-8"
             initial="hidden" animate="visible" variants={fadeUp} custom={0}
           >
             Diamond certified<br />
