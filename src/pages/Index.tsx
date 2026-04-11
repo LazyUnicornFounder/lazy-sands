@@ -148,6 +148,7 @@ const Index = () => {
               Portfolio
             </Button>
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("about")}>
+              About
             </Button>
             <a href="https://x.com/SoloUnicorn" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground w-9 h-9">
@@ -244,12 +245,12 @@ const Index = () => {
             <p className="text-muted-foreground font-light leading-relaxed text-lg">
               Lazy Sands is a venture of{" "}
               <a
-                href="https://lazyfactoryventures.com/"
+                href="https://lazyfounderventures.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary/80 hover:text-primary underline underline-offset-4 transition-colors"
               >
-                Lazy Factory Ventures
+                Lazy Founder Ventures
               </a>
               , building and launching businesses and apps at speed using the latest AI-powered tools.
             </p>
