@@ -165,9 +165,8 @@ const Index = () => {
             className="text-8xl md:text-9xl lg:text-[12rem] font-heading leading-[1.05] tracking-tight mb-8"
             initial="hidden" animate="visible" variants={fadeUp} custom={0}
           >
-            Diamond<br />
-            certified <span className="text-gradient italic">Lovable</span><br />
-            agency
+            Diamond certified<br />
+            <span className="text-gradient italic">Lovable</span> agency
           </motion.h1>
 
           <motion.p
