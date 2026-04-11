@@ -209,11 +209,6 @@ const Index = () => {
             </a>
           </motion.div>
 
-          <motion.div
-            initial="hidden" animate="visible" variants={fadeUp} custom={2}
-          >
-            <ShowcaseTicker />
-          </motion.div>
         </div>
       </section>
 
