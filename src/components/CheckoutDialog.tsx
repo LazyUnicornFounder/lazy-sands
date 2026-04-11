@@ -75,13 +75,13 @@ const CheckoutDialog = ({ open, planName, planPrice, loading, onClose, onSubmit 
               <div className="space-y-6 mb-10">
                 <div>
                   <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                    What do you want to sell?
+                    What do you want to build?
                   </label>
                   <textarea
                     value={sellWhat}
                     onChange={(e) => setSellWhat(e.target.value)}
                     className="w-full h-32 rounded-lg border border-border/50 bg-background/50 p-5 text-foreground text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 resize-none transition-all duration-300 font-light"
-                    placeholder="Describe your product or service..."
+                    placeholder="Describe your app, website, internal tool or anything else you want to build..."
                   />
                 </div>
                 <div>
