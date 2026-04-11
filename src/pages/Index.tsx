@@ -144,9 +144,6 @@ const Index = () => {
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("shop")}>
               Shop
             </Button>
-            <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("pricing")}>
-              Pricing
-            </Button>
             <Button variant="ghost" className="text-foreground/60 hover:text-foreground text-sm font-light tracking-wide" onClick={() => jumpToSection("portfolio")}>
               Portfolio
             </Button>
@@ -232,70 +229,7 @@ const Index = () => {
         <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
-      {/* Pricing */}
-      <section id="pricing" className="py-24 md:py-32 relative z-10">
-        <div className="container">
-          <div
-            className="text-center mb-20"
-          >
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Pricing</p>
-            <h2 className="text-4xl md:text-5xl font-heading mb-5">Choose your package</h2>
-            <p className="text-muted-foreground font-light">One-time payment. No subscriptions. You own everything.</p>
-            <p className="text-xs text-muted-foreground/50 mt-3 font-light">Powered by <a href="https://polar.sh" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground transition-colors">Polar</a> payments</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {plans.map((plan, i) => (
-              <div
-                key={plan.name}
-                className="group relative p-7 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm flex flex-col hover:border-primary/20 hover:bg-card/70 transition-all duration-500"
-              >
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{plan.name}</p>
-                <div className="mb-2">
-                  <p className="text-3xl font-heading">{plan.price}</p>
-                </div>
-                <p className="text-sm text-muted-foreground font-light mb-6 leading-relaxed">{plan.description}</p>
-                
-                <div className="h-px bg-border/50 mb-6" />
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground font-light">
-                      <Check className="w-3.5 h-3.5 text-primary/70 mt-0.5 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                {plan.productId ? (
-                  <Button
-                    size="lg"
-                    className="w-full bg-transparent border border-border/70 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 font-light tracking-wide"
-                    onClick={() => setSelectedPlan(plan)}
-                  >
-                    Get Started
-                    <ArrowRight className="ml-2 w-3.5 h-3.5" />
-                  </Button>
-                ) : (
-                  <Button
-                    size="lg"
-                    className="w-full bg-transparent border border-border/70 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 font-light tracking-wide"
-                    onClick={() => window.location.href = "mailto:hello@lovablebuilder.com"}
-                  >
-                    Contact Us
-                    <ArrowRight className="ml-2 w-3.5 h-3.5" />
-                  </Button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Shop */}
-      <div className="container max-w-5xl mx-auto">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      </div>
 
       <ShopSection onSelectProduct={(product) => setSelectedShopProduct(product)} />
 
