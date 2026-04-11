@@ -28,11 +28,11 @@ const CheckoutDialog = ({ open, planName, planPrice, loading, onClose, onSubmit 
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") handleClose();
+      if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [open]);
+  }, [open, onClose]);
 
   return (
     <AnimatePresence>
