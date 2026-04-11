@@ -185,7 +185,7 @@ const Index = () => {
             className="mb-6"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
           >
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-light tracking-wide" onClick={() => jumpToSection("pricing")}>
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-light tracking-wide" onClick={() => jumpToSection("shop")}>
               Get Started
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
