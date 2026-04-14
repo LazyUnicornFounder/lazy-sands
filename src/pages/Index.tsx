@@ -15,6 +15,7 @@ import ShopSection, { type ShopProduct } from "@/components/ShopSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import { useState } from "react";
 import { toast } from "sonner";
+import OpenSourceBanner from "@/components/OpenSourceBanner";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 8 },
@@ -304,6 +305,7 @@ const Index = () => {
           handleCheckout(selectedShopProduct.productId);
         }}
       />
+          <OpenSourceBanner />
     </div>
   );
 };
