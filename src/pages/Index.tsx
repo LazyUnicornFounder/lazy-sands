@@ -16,6 +16,7 @@ import PortfolioSection from "@/components/PortfolioSection";
 import { useState } from "react";
 import { toast } from "sonner";
 import OpenSourceBanner from "@/components/OpenSourceBanner";
+import PortfolioFooter from "@/components/PortfolioFooter";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 8 },
@@ -306,6 +307,7 @@ const Index = () => {
         }}
       />
           <OpenSourceBanner />
+          <PortfolioFooter />
     </div>
   );
 };
